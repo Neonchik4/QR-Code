@@ -46,24 +46,19 @@ jobs:
 
   instrumentation-tests:
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 7
+    timeout-minutes: 30
     strategy:
       # Allow tests to continue on other devices if they fail on one device.
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
-        arch: [ x86_64 ]
-        target: [ google_apis ]
-        channel: [ stable ]
-        api-level:
-          - 34
         include:
           - os: ubuntu-latest
-            arch: x86_64
-            api-level: 34
+            arch: x86
+            api-level: 30
             target: aosp_atd
+            channel: canary
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-java@v3
         with:
           java-version: 17
