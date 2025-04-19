@@ -55,14 +55,14 @@ jobs:
 
   instrumentation-tests:
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 30
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
         include:
           - os: ubuntu-latest
             arch: x86
-            api-level: 30
+            api-level: 29
             target: aosp_atd
             channel: stable  # Изменили на stable для большей стабильности
     steps:
