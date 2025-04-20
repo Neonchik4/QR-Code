@@ -45,7 +45,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v3
         with:
-          java-version: 17
+          java-version: '17'
           distribution: 'zulu'
       - uses: gradle/gradle-build-action@v2
       - name: Grant execute permission for gradlew
@@ -56,6 +56,7 @@ jobs:
   instrumentation-tests:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
+    needs: [test, checks]
     strategy:
       fail-fast: false
       matrix:
@@ -83,16 +84,16 @@ jobs:
 
       - uses: actions/setup-java@v3
         with:
-          java-version: 17
+          java-version: '17'
           distribution: 'zulu'
 
       - uses: gradle/gradle-build-action@v2
 
       - name: Create emu-update-last-check.ini
         run: |
-          mkdir -p /home/runner/.android
-          touch /home/runner/.android/emu-update-last-check.ini
-          chmod 666 /home/runner/.android/emu-update-last-check.ini
+          mkdir -p $HOME/.android
+          touch $HOME/.android/emu-update-last-check.ini
+          chmod 666 $HOME/.android/emu-update-last-check.ini
 
       - name: AVD cache
         uses: actions/cache@v3
