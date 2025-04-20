@@ -60,11 +60,26 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
-            arch: x86_64
-            api-level: 31
-            target: google_apis
-            channel: stable
+        - os: ubuntu-latest
+          arch: x86_64
+          api-level: 31
+          target: google_apis
+          channel: stable
+        - os: ubuntu-latest
+          arch: x86_64
+          api-level: 32
+          target: google_apis
+          channel: stable
+        - os: ubuntu-latest
+          arch: x86_64
+          api-level: 33
+          target: google_apis
+          channel: stable
+        - os: ubuntu-latest
+          arch: x86_64
+          api-level: 34
+          target: google_apis
+          channel: stable
     steps:
       - uses: actions/checkout@v4
 
