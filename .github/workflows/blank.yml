@@ -56,7 +56,6 @@ jobs:
   instrumentation-tests:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
-    needs: [test, checks]
     strategy:
       fail-fast: false
       matrix:
