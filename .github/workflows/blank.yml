@@ -59,10 +59,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        os: [ubuntu-latest]
+        arch: [ x86_64 ]
+        target: [ google_apis ]
+        channel: [ stable ]
         include:
           - os: ubuntu-latest
             arch: x86_64
-            api-level: 31
+            api-level: 29
             target: google_apis
             channel: stable
     steps:
