@@ -63,8 +63,9 @@ jobs:
           - os: ubuntu-latest
             arch: x86
             api-level: 31
-            target: aosp_atd
+            target: google_apis
             channel: stable  # Изменили на stable для большей стабильности
+    
     steps:
       - uses: actions/checkout@v4
 
