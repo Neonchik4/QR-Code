@@ -61,11 +61,10 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            arch: x86
+            arch: x86_64
             api-level: 31
             target: google_apis
-            channel: stable  # Изменили на stable для большей стабильности
-    
+            channel: stable
     steps:
       - uses: actions/checkout@v4
 
@@ -98,7 +97,7 @@ jobs:
           path: |
             ~/.android/avd/*
             ~/.android/adb*
-          key: avd-${{ matrix.api-level }}-${{ matrix.os }}-${{ matrix.target }}
+          key: avd-${{ matrix.api-level }}-${{ matrix.os }}-${{ matrix.target }}-${{ matrix.arch }}
 
       - name: Create AVD and generate snapshot for caching
         if: steps.avd-cache.outputs.cache-hit != 'true'
