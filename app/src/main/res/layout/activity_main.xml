@@ -9,13 +9,14 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_width="313dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="36dp"
         android:hint="Введите текст"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,HardcodedText,VisualLintOverlap" />
 
     <Button
@@ -27,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/qrCodeImageView"

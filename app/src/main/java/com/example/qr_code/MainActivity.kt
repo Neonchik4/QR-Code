@@ -3,7 +3,6 @@ package com.example.qr_code
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Rect
-import android.graphics.Xfermode
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -14,19 +13,7 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Canvas
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.qr_code.ui.theme.QRCodeTheme
 import java.util.EnumMap
-import kotlin.math.log
 
 class MainActivity : ComponentActivity() {
     private lateinit var editText: EditText
